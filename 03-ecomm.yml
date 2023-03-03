@@ -1,0 +1,16 @@
+---
+- name: Update n3 server
+  hosts: n3
+  become: yes
+  
+  tasks:
+  - name: Install Git
+    yum:
+      name: git
+      state: present
+
+  - name: Deploy App
+    git:
+      repo: https://github.com/ravi2krishna/ecomm.git
+      dest: /var/www/html
+...
