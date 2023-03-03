@@ -5,6 +5,6 @@
   tasks:
   - name: copy DB properties
     copy:
-      dest: /home/centos/db.properties
+      dest: /home/ec2-user/db.properties
       src: db.prop
 ...      
