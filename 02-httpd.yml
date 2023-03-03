@@ -1,0 +1,22 @@
+# ansible n3  -m file -a "path=/home/centos/n3_dir state=directory"
+---
+- name: Update n3 server
+  hosts: n3
+  become: yes
+  
+  tasks:
+  - name: Install HTTPD
+    yum:
+      name: httpd
+      state: present
+
+  - name: Start HTTPD
+    service:
+      name: httpd
+      state: started
+
+  - name: Enable HTTPD
+    service:
+      name: httpd
+      enabled: true
+...
