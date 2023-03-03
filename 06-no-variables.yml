@@ -1,6 +1,6 @@
 ---
 - name: Update dynamic server
-  hosts: n5
+  hosts: n4
   
   tasks:
   - name: copy DB properties
