@@ -1,0 +1,10 @@
+---
+- name: Update dynamic server
+  hosts: n5
+  
+  tasks:
+  - name: copy DB properties
+    copy:
+      dest: /home/centos/db.properties
+      src: db.prop
+...      
