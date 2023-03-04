@@ -1,0 +1,8 @@
+---
+- name: Update n5 server
+  hosts: n5
+  become: yes
+  
+  roles:
+  - apache
+#  - angular-role

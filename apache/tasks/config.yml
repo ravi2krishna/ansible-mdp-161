@@ -1,0 +1,13 @@
+  - name: copy DB properties
+    copy:
+      dest: /tmp/db.properties
+      src: db.prop
+
+  - name: Update Dynamic Port - Apache
+    template:
+        dest: /etc/httpd/conf/httpd.conf
+        src: httpd.j2
+    notify:  
+      - Restart HTTPD
+    
+
