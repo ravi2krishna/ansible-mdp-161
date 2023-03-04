@@ -1,0 +1,21 @@
+---
+- name: Update server config
+  hosts: n5
+  become: yes
+  vars:
+    http_port: 80
+  
+  tasks:
+  - name: Update Dynamic Port - Apache
+    template:
+      dest: /etc/httpd/conf/httpd.conf
+      src: httpd.j2
+    notify:  
+    - Restart HTTPD
+  
+  handlers:
+  - name: Restart HTTPD
+    service:
+      name: httpd
+      state: restarted
+...      
