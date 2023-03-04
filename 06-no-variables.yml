@@ -1,3 +1,5 @@
+# dest - /home/ubuntu/db.properties
+# dest - /home/______/db.properties
 ---
 - name: Update dynamic server
   hosts: n4
