@@ -10,4 +10,9 @@
     template:
       dest: /etc/httpd/conf/httpd.conf
       src: httpd.j2
+  
+  - name: Restart HTTPD
+    service:
+      name: httpd
+      state: restarted
 ...      
