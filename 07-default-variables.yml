@@ -1,0 +1,12 @@
+# dest - /home/ubuntu/db.properties
+# dest - /home/______/db.properties
+---
+- name: Update dynamic server
+  hosts: web
+  
+  tasks:
+  - name: copy DB properties
+    template:
+      dest: /home/{{ ansible_user_id }}/db.properties
+      src: db.prop.j2
+...      
